@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test10.html</title>
+  <script>
+    "use strict"
+    function msg() {
+      let su1 = prompt("수를 입력하세요");
+      document.write("<br/>su1 : ",su1);
+      let ans = confirm("작업을 계속하시겠습니까?");
+      document.write("<br/>ans : ",ans);
+      if(ans) {
+        alert("작업을 계속합니다.");
+      }
+      else {
+        alert("수고하셨습니다.")
+      }
+    }
+
+  </script>
+</head>
+<body>
+  <h2>메세지를 통한 값의 입력</h2>
+  <p>값을 입력해주세요
+    <input type="button" value="값입력" onclick="msg()"/>
+  </p>
+</body>
+</html>

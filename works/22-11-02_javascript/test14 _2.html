@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test14_2.html</title>
+  <script>
+    'use strict'
+    function account() {
+      if(document.getElementById("su1").value=="") {
+        alert("수를 입력하세요!")
+      }
+      else {
+        let res = eval(document.getElementById("su1").value);
+        myform.res.value = res;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>사칙연산 계산하기</h2>
+  <div>수를 입력하세요.</div>
+  <form name="myform" method="get" action="#">
+    <p>
+      <p>수 : <input type="text" name="su1" id="su1" autofocus required/></p>
+      <p>결과 : <input type="text" name="res" id="res" readonly/></p>
+      <p>
+        <input type="button" value="계산" onclick="account()"/>
+        <input type="reset" value="다시"/>
+      </p>
+    </p>
+  </form>
+</body>
+</html>
