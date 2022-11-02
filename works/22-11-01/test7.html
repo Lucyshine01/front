@@ -1,0 +1,45 @@
+<!-- 
+  FlexBox는 바둑판 모양의 정렬이 어렵다. 즉, 한 방향 레이아웃에는 적합한다.(1차원)
+  Grid는 2차원(가로/세로)구조의 레이아웃으로 작업한다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test7.html(Grid Layout)</title>
+  <style>
+    .item {
+      color: #000;
+    }
+    /* 그리드형태 정의(grid-template-rows, grid-template-columns) */
+    .container {
+      display: grid;
+      grid-gap: 0.5em;
+      /* grid-template-columns: 40% 60%; */
+      /* grid-template-columns: 4fr 6fr; */
+      /* grid-template-columns: 1fr 3fr 1fr; */
+      /* grid-template-columns: 1fr 1fr 1fr; */
+      /* grid-template-columns: repeat(3, 1fr); */
+
+      /* 첫번쨰 아이템을 고정하고 두번째를 자유롭게 변형하려고 한다. */
+      grid-template-columns: 200px 1fr 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item" style="background-color: #40BAAA;">1.안녕하세요</div>
+    <div class="item" style="background-color: #8DC0F1;">2.안녕하세요</div>
+    <div class="item" style="background-color: #ED77BC;">3.안녕하세요</div>
+    <div class="item" style="background-color: #F99090;">4.안녕하세요</div>
+    <div class="item" style="background-color: #FFD990;">5.안녕하세요</div>
+    <div class="item" style="background-color: #FCDADF;">7.안녕하세요</div>
+    <div class="item" style="background-color: #FCF3E8;">8.안녕하세요</div>
+    <div class="item" style="background-color: #EFE6C1;">9.안녕하세요</div>
+    <div class="item" style="background-color: #F0C6CE;">6.안녕하세요</div>
+    <div class="item" style="background-color: #B2DE9D;">10.안녕하세요</div>
+  </div>
+</body>
+</html>

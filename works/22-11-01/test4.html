@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test4.html</title>
+  <style>
+    .item {
+      width: 100px;
+      height: 800px;
+      border: 1px solid #1c64cf;
+      margin: 10px;
+      color: rgb(85, 85, 85);
+    }
+    .container {
+      height: 100vh; /* view port 100%로 설정 */
+      display: flex; /* 플렉스 박스 설정을 알린다 */
+      flex-flow: row nowrap; /* 컨테이너의 아이템들을 한줄에 담을수 없을때 줄바꿈 처리유무를 결정? nowrap(기본:줄바꿈하지않음),wrap(줄바꿈),warp-reverse(반대로 줄바꿈) */
+    }
+
+    /* 1번째 영역은 고정하고 2번째 영역만을 크기조정하고자 한다. */
+    .item:nth-child(1) {
+      width: 200px;
+    }
+    .item:nth-child(2) {
+      flex: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container"> <!-- '플렉스 컨테이너'라고 부른다. -->
+    <!-- '플렉스 아이템'이라고 부른다. -->
+    <div class="item" style="background-color: #40BAAA;">1.안녕하세요</div>
+    <div class="item" style="background-color: #8DC0F1;">2.안녕하세요</div>
+    <!-- <div class="item" style="background-color: #ED77BC;">3.안녕하세요</div>
+    <div class="item" style="background-color: #F99090;">4.안녕하세요</div>
+    <div class="item" style="background-color: #FFD990;">5.안녕하세요</div>
+    <div clitem" style="background-color: #FCDADF;">7.안녕하세요</div>
+    <div class="item" style="background-color: #FCF3E8;">8.안녕하세요</div>
+    <div class="item" style="background-color: #EFE6C1;">9.안녕하세요</div>
+    <div class="iass="item" style="background-color: #F0C6CE;">6.안녕하세요</div>
+    <div class="tem" style="background-color: #B2DE9D;">10.안녕하세요</div> -->
+  </div>
+</body>
+</html>

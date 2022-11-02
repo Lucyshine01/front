@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test8.html</title>
+  <style>
+    ul li {
+      list-style: none;
+      width: 300px;
+      padding: 10px;
+      text-align: center;
+      background-color: tan;
+      border: 1px solid black;
+      color: white;
+    }
+    
+    /* ul li:last-child {
+      background-color: yellow;
+    }
+    ul li:nth-child(2n){
+      background-color: magenta;
+    }
+    ul li:nth-child(2n+1){
+      background-color: green;
+    }
+    ul li:first-child {
+      background-color: blue;
+    }
+    ul li:nth-child(5) {
+      background-color: red;
+    }
+    ul li:hover{
+      background-color: tomato;
+    } */
+    div {
+      position: relative;
+    }
+    #asd:hover + #asdf{
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <h2>목록태그에 hover 적용하기</h2>
+  <div>
+    <ul>
+      <li>제목</li>
+      <li id="asd">가</li>
+      <li>나</li>
+      <li>다</li>
+      <li>라</li>
+      <li id="asdf">마</li>
+      <li>바</li>
+      <li>사</li>
+      <li>아</li>
+      <li>자</li>
+      <li>차</li>
+      <li>카</li>
+      <li>타</li>
+      <li>파</li>
+      <li>하</li>
+    </ul>
+  </div>
+</body>
+</html>

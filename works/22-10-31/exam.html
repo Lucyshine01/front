@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0px;
+    }
+    #outbox{
+      margin: 0 auto;
+      width: 1000px;
+      
+    }
+    table {
+      border-collapse: collapse;
+    }
+    #head {
+      position: relative;
+      width: 1000px;
+      height: 200px;
+      background-color: aqua;
+      background-image: url("../../images/5.png");
+    }
+    #body {
+      position: relative;
+      width: 1000px;
+      height: 900px;
+    }
+    #foot {
+      position: relative;
+      margin: 25px 0px;
+      width: 1000px;
+      height: 150px;
+      background-color: violet;
+    }
+    #ctcontent {
+      float: left;
+      width: 600px;
+      height: 900px;
+    }
+    #ltcontent {
+      float: left;
+      width: 200px;
+      height: 900px;
+    }
+    #rtcontent {
+      float: right;
+      width: 200px;
+      height: 900px;
+    }
+    .ctbox {
+      margin: 25px;
+      float: left;
+      width: 250px;
+      height: 400px;
+    }
+    .ltbox {
+      float: left;
+      width: 200px;
+      height: 300px;
+    }
+    .rtbox {
+      float: left;
+      width: 200px;
+      height: 300px;
+    }
+    .ctcont {
+      margin: 25px;
+    }
+    ol {
+      position: relative;
+      margin: 0px;
+      left: -22px;
+    }
+    ul {
+      position: relative;
+      margin: 0px;
+      left: -32px;
+      top: 10px;
+      list-style: none;
+    }
+    .bold {
+      font-weight: 800;
+      font-size: 12pt;
+    }
+    .ct {
+      text-align: center;
+      padding: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="outbox">
+    <div id="head">
+      <div class="ct"><h2>레이아웃 패치</h2></div>
+    </div>
+    <div id="body">
+      <div id="ltcontent">
+        <div class="ltbox" style="background-color: yellow;">연습1</div>
+        <div class="ltbox" style="background-color: green;">연습2</div>
+        <div class="ltbox" style="background-color: blue;">연습3</div>
+      </div>
+      <div id="ctcontent">
+        <div class="ctbox" style="background-color: rgb(241, 239, 71);">
+          <div class="ctcont">
+            <div class="bold">공지사항</div>
+            <ol>
+              <li>연습4-1-1</li>
+              <li>연습4-1-2</li>
+              <li>연습4-1-3</li>
+              <li>연습4-1-4</li>
+              <li>연습4-1-5</li>
+            </ol>
+          </div>
+        </div>
+        <div class="ctbox" style="background-color: orange;">
+          <div class="ctcont">
+            <div class="bold">신입회원</div>
+            <ol>
+              <li>연습4-2-1</li>
+              <li>연습4-2-2</li>
+              <li>연습4-2-3</li>
+              <li>연습4-2-4</li>
+            </ol>
+          </div>
+        </div>
+        <div class="ctbox" style="background-color: violet;">
+          <div class="ctcont">
+            <ul>
+              <li>연습4-3-1</li>
+              <li>연습4-3-2</li>
+              <li>연습4-3-3</li>
+              <li>연습4-3-4</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ctbox" style="background-color: rgb(212, 38, 212);">
+          <div class="ctcont">
+            <ul>
+              <li>연습4-4-1</li>
+              <li>연습4-4-2</li>
+              <li>연습4-4-3</li>
+              <li>연습4-4-4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="rtcontent">
+        <div class="rtbox" style="background-color: orangered;">연습5</div>
+        <div class="rtbox" style="background-color: skyblue;">연습6</div>
+      </div>
+    </div>
+    <div id="foot">
+      푸터(바닥글)
+    </div>
+  </div>
+</body>
+</html>
