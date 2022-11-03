@@ -32,6 +32,31 @@
       console.log("arr2["+cnt+"] = "+arr);
       cnt++;
     }
+    console.clear();
+
+    // forEach문을 아용한 반복 출력 : 객체명.forEach();
+    // arr2.forEach(function(arr, index, array) {}
+    arr2.forEach(function() {
+      console.log("값 : "+"/");
+    });
+    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    arr2.forEach(function(arr) {
+      console.log("값 : "+arr);
+    });
+    
+    console.log("################################");
+    // 익명함수를 Arrow 함수로 변형해보자
+    arr2.forEach((arr) => {
+      console.log("값2 : "+arr);
+    });
+    
+    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+    // 익명함수를 Arrow 함수로 변형해보자
+    arr2.forEach((arr) => console.log("값3 :"+arr));
+
+    console.log("///////////////////////////////////");
+    // 익명함수를 Arrow 함수로 변형해보자
+    arr2.forEach((arr,index) => console.log((index+1) +"번째 값4 :"+arr));
   </script>
 </head>
 <body>
