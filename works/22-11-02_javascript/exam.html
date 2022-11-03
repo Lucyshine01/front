@@ -99,7 +99,8 @@
       if(!isNaN(parseInt(temp))){
         document.getElementById("res").value += temp;
       }
-      else if(document.getElementById("res").value == ""){}
+      else if(document.getElementById("res").value == "" ||
+      isNaN(document.getElementById("res").value.substring(document.getElementById("res").value.length-1))){}
       else {
         document.getElementById("res").value += temp;
       }
