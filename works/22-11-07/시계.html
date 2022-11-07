@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <title>시계</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    #screen {
+      position: relative;
+      margin: 10px auto;
+      width: 240px;
+      height: 60px;
+      padding: 0px;
+      align-items: center;
+    }
+    #ampm {
+      position: absolute;
+      width: 240px;
+      height: 30px;
+      padding: 0px;
+    }
+    .timeitem {
+      position: absolute;
+      top: 30px;
+      padding: 0px;
+      height: 30px;
+    }
+    #hh {
+      width: 90px;
+    }
+    #mm {
+      left: 90px;
+      width: 90px;
+    }
+    #ss1 {
+      left: 180px;
+      width: 30px;
+    }
+    #ss2 {
+      left: 210px;
+      width: 30px;
+    }
+    fieldset {
+      margin: 0 auto;
+      border: 2px solid #ccc;
+      width: 400px;
+      padding: 3px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <p><br></p>
+  <div style="text-align: center;">
+    <fieldset>
+      <legend style="width: 200px;"><h2>인터넷 시계</h2></legend>
+      <div style="margin: 0px auto;">
+        <div>
+          <input type="button" value="동작" onclick="starting()" class="btn btn-success"/>
+          <input type="button" value="중지" onclick="stoping()" class="btn btn-danger"/>
+        </div>
+        <div id="screen">
+          <div id="ampm"></div>
+          <div id="hh" class="timeitem"></div>
+          <div id="mm" class="timeitem"></div>
+          <div id="ss1" class="timeitem"></div>
+          <div id="ss2" class="timeitem"></div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <script>
+    'use strict';
+    let statusTime;
+    let timenow = () =>{
+      let today = new Date();
+      let hh = today.getHours();
+      let mm = today.getMinutes();
+      let ss = today.getSeconds();
+      let am_pm;
+      if(hh > 12) {
+        hh += -12
+        am_pm = "PM";
+      }
+      else {
+        am_pm = "AM";
+      }
+      am_pm = "<img src='../../images/시계/"+ am_pm.slice(-2,-1)+".png'/><img src='../../images/시계/"+ am_pm.slice(-1)+".png'/>"
+      let ml = "<img src='../../images/시계/midline.png'/>"
+      document.getElementById("ampm").innerHTML = am_pm;
+      hh = "<img src='../../images/시계/"+("0"+hh).slice(-2,-1)+".gif'/><img src='../../images/시계/"+("0"+hh).slice(-1)+".gif'/>"
+      document.getElementById("hh").innerHTML = hh + ml;
+      mm = "<img src='../../images/시계/"+("0"+mm).slice(-2,-1)+".gif'/><img src='../../images/시계/"+("0"+mm).slice(-1)+".gif'/>"
+      document.getElementById("mm").innerHTML = mm + ml;
+      // ss = "<img src='../../images/시계/"+("0"+ss).slice(-2,-1)+".gif'/><img src='../../images/시계/"+("0"+ss).slice(-1)+".gif'/>"
+      document.getElementById("ss1").innerHTML = "<img src='../../images/시계/"+("0"+ss).slice(-2,-1)+".gif'/>";
+      document.getElementById("ss2").innerHTML = "<img src='../../images/시계/"+("0"+ss).slice(-1)+".gif'/>";
+      // document.getElementById("screen").innerHTML =  am_pm + "<br/>" + hh + ml + mm + ml + ss; 
+    }
+    function starting() {
+      timenow();
+      statusTime = setInterval(timenow,1000);
+    }
+    function stoping() {
+      clearInterval(statusTime);
+    }
+  </script>
+</body>
+</html>
