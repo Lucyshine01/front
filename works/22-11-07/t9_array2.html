@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열연습2</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  
+</head>
+<body>
+<div class="container">
+  <h2>배열 연습2</h2>
+  <p>
+  </p>
+  <hr/>
+  <div id="demo"></div>
+  <hr/>
+</div>
+<p><br/></p>
+<script>
+  'use strict';
+  
+  let arr1 = [10, 8, 20, 15, 11, 17];
+
+  // 정렬 : sort() : 문자형식으로 오름차순 정렬한다.
+  let arr2 = arr1.sort();
+  document.getElementById("demo").innerHTML += "1.오름차순 정렬 : " + arr2 + "<br/>";
+  
+  // 역순 정렬 : reverse() : 문자열 형식으로 내림차순 정렬한다.
+  let arr3 = arr1.reverse();
+  document.getElementById("demo").innerHTML += "2.내림차순 정렬 : " + arr3 + "<br/>";
+  
+  // 최대/최소값 구하기(Math.max , Math.min)
+  let maxValue = Math.max(10, 8, 20, 15, 11, 17);
+  document.getElementById("demo").innerHTML += "3.최대값 : " + maxValue + "<br/>";
+  
+  let minValue = Math.min(10, 8, 20, 15, 11, 17);
+  document.getElementById("demo").innerHTML += "4.최소값 : " + minValue + "<br/>";
+  
+  // 배열안에서의 최대값/최소값을 구하기(... : 열거형 데이터를 배열로 변환)
+  maxValue = Math.max(...arr3);
+  document.getElementById("demo").innerHTML += "5.최대값 : " + maxValue + "<br/>";
+  minValue = Math.min(...arr3);
+  document.getElementById("demo").innerHTML += "6.최소값 : " + minValue + "<br/>";
+
+</script>
+</body>
+</html>
