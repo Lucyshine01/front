@@ -24,12 +24,14 @@
       width: 240px;
       height: 30px;
       padding: 0px;
+      text-align: center;
     }
     .timeitem {
       position: absolute;
       top: 30px;
       padding: 0px;
       height: 30px;
+      text-align: center;
     }
     #hh {
       width: 90px;
@@ -91,16 +93,22 @@
       else {
         am_pm = "AM";
       }
+      document.getElementById("ampm").style.backgroundColor = "black";
+      document.getElementById("hh").style.backgroundColor = "black";
+      document.getElementById("mm").style.backgroundColor = "black";
+      document.getElementById("ss1").style.backgroundColor = "black";
+      document.getElementById("ss2").style.backgroundColor = "black";
+
       am_pm = "<img src='../../images/시계/"+ am_pm.slice(-2,-1)+".png'/><img src='../../images/시계/"+ am_pm.slice(-1)+".png'/>"
       let ml = "<img src='../../images/시계/midline.png'/>"
-      document.getElementById("ampm").innerHTML = am_pm;
       hh = "<img src='../../images/시계/"+("0"+hh).slice(-2,-1)+".gif'/><img src='../../images/시계/"+("0"+hh).slice(-1)+".gif'/>"
-      document.getElementById("hh").innerHTML = hh + ml;
       mm = "<img src='../../images/시계/"+("0"+mm).slice(-2,-1)+".gif'/><img src='../../images/시계/"+("0"+mm).slice(-1)+".gif'/>"
+      document.getElementById("ampm").innerHTML = am_pm;
+      document.getElementById("hh").innerHTML = hh + ml;
       document.getElementById("mm").innerHTML = mm + ml;
-      // ss = "<img src='../../images/시계/"+("0"+ss).slice(-2,-1)+".gif'/><img src='../../images/시계/"+("0"+ss).slice(-1)+".gif'/>"
       document.getElementById("ss1").innerHTML = "<img src='../../images/시계/"+("0"+ss).slice(-2,-1)+".gif'/>";
       document.getElementById("ss2").innerHTML = "<img src='../../images/시계/"+("0"+ss).slice(-1)+".gif'/>";
+      // ss = "<img src='../../images/시계/"+("0"+ss).slice(-2,-1)+".gif'/><img src='../../images/시계/"+("0"+ss).slice(-1)+".gif'/>"
       // document.getElementById("screen").innerHTML =  am_pm + "<br/>" + hh + ml + mm + ml + ss; 
     }
     function starting() {

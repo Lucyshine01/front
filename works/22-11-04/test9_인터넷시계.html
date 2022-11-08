@@ -22,11 +22,13 @@
 
     function clockStart() {
       // setInterval(함수명,시간(1000분의 1초단위)) 해당함수를 시간반복
-      statusTime = setInterval(clock,10);
+      // statusTime = setInterval(clock,10);
+      statusTime = setTimeout("clock()",10);
     }
     function clockStop() {
       // clearInterval (셋인터버에서 설정한 것을 초기화시켜 중지)
-      clearInterval(statusTime);
+      // clearInterval(statusTime);
+      clearTimeout(statusTime);
     }
   </script>
 </head>
