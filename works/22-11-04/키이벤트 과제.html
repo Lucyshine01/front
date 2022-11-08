@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>키이벤트 과제</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .container{
+      width: 600px;
+      height: 500px;
+      padding: 0px;
+    }
+    .row,.col{
+      float: none;
+      margin:0 auto;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <p><br/></p>
+  <h2>무작위 상수 맞추기</h2>
+  <p><br/></p>
+  <form name="myform">
+    <div class="row">
+      <div class="col-6">
+        <div>시작수</div>
+        <div><input type="number" name="stnum" id="stnum" value="0" class="form-control mb-2 mt-1"></div>
+      </div>
+      <div class="col-6">
+        <div>정답(←:수 줄이기, →:수 늘리기)</div>
+        <div><input type="number" name="num" id="num" value="50" class="form-control mb-2 mt-1"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div>끝수</div>
+        <div><input type="number" name="ltnum" id="ltnum" value="100" class="form-control mb-2 mt-1"></div>
+      </div>
+      <div class="col-6 align-self-center">
+        <div class="text-center">
+          <input type="button" value="난수 생성(↑)" id="randombtn" onclick="random()" class="btn btn-success m-2">
+          <input type="button" value="맞추기(↓)" id="corretbtn" onclick="fCheck()" class="btn btn-primary m-2">
+          <input type="button" value="다시하기(space)" id="resetbtn" onclick="reseton()" class="btn btn-danger m-2">
+        </div>
+      </div>
+    </div>
+  </form>
+  <hr/>
+  <div id="demo"></div>
+  <hr/>
+</div>
+<p><br/></p>
+  <script>
+    'use strict';
+    let randomsu = "";
+    let check = "";
+    let su1 = "";
+    function random() {
+      let stnum = document.getElementById("stnum").value;
+      let ltnum = document.getElementById("ltnum").value;
+      if(stnum == "" || ltnum == ""){
+        alert("시작값과 끝값을 입력해주세요!");
+        document.getElementById("stnum").focus();
+        return false;
+      }
+      if(isNaN(stnum)){
+        alert("난수 입력을 다시 해주세요!");
+        document.getElementById("stnum").select();
+        document.getElementById("stnum").focus();
+        return false;
+      }
+      if(isNaN(ltnum)){
+        alert("난수 입력을 다시 해주세요!");
+        document.getElementById("ltnum").select();
+        document.getElementById("ltnum").focus();
+        return false;
+      }
+      randomsu = parseInt(Math.random()*(ltnum-stnum) + stnum).toFixed(0);
+      demo.innerHTML = '<div class="alert alert-success"><strong>무작위 상수가 생성되었습니다!</strong> 값을 입력해서 맞춰보세요!</div>'
+      console.log("현재 난수 : "+randomsu);
+    }
+    function fCheck() {
+      if(randomsu == "") {
+        alert("난수를 생성하신후에 눌러주세요!");
+        return false;
+      }
+      check = document.getElementById("num").value;
+      if(parseInt(check) > parseInt(randomsu)){
+        su1 = parseInt(check) - parseInt(randomsu);
+        if(50<parseInt(su1)){
+          document.getElementById("demo").innerHTML = '<div class="alert alert-danger"><strong>입력하신 값이 정답보다 매우 큽니다! </strong> 값의 차이가 50이상입니다.</div>';
+        }
+        else if(25<parseInt(su1)){
+          document.getElementById("demo").innerHTML = '<div class="alert alert-warning"><strong>입력하신 값이 정답보다 큽니다!</strong> 값의 차이가 25이상입니다.</div>';
+        }
+        else{
+          document.getElementById("demo").innerHTML = '<div class="alert alert-info"><strong>입력하신 값이 정답보다 조금 큽니다!</strong> 값이 차이가 25이하입니다.</div>';
+        }
+      }
+      else if(parseInt(check) < parseInt(randomsu)){
+        su1 = parseInt(randomsu) - parseInt(check);
+        if(50<parseInt(su1)){
+          document.getElementById("demo").innerHTML = '<div class="alert alert-danger"><strong>입력하신 값이 정답보다 매우 작습니다! </strong> 값의 차이가 50이상입니다.</div>';
+        }
+        else if(25<parseInt(su1)){
+          document.getElementById("demo").innerHTML = '<div class="alert alert-warning"><strong>입력하신 값이 정답보다 작습니다!</strong> 값의 차이가 25이상입니다.</div>';
+        }
+        else{
+          document.getElementById("demo").innerHTML = '<div class="alert alert-info"><strong>입력하신 값이 정답보다 조금 작습니다!</strong> 값이 차이가 25이하입니다.</div>';
+        }
+      }
+      else{
+        document.getElementById("demo").innerHTML = '<div class="alert alert-success"><strong>정답!</strong> 입력 하신 값이 맞습니다!</div>';
+      }
+    }
+    function reseton() {
+      randomsu = "";
+      document.getElementById("stnum").value = 0;
+      document.getElementById("ltnum").value = 100;
+      document.getElementById("num").value = 50;
+      if(demo.innerHTML != ""){
+        document.getElementById("demo").innerHTML = '<div class="alert alert-warning"><strong>초기화 되었습니다!</strong></div>';
+      }
+    }
+    function keyboardEvent(e) {
+      let str = "";
+      switch(e.which){
+        case 32 :
+            document.getElementById("resetbtn").click();
+          break;
+        case 37 :
+          document.getElementById("num").value = parseInt(document.getElementById("num").value)-1;
+          break;
+        case 39 :
+          document.getElementById("num").value = parseInt(document.getElementById("num").value)+1;
+          break;
+        case 38 :
+          document.getElementById("randombtn").click();
+          break;
+        case 40 :
+          document.getElementById("corretbtn").click();
+          break;
+        default:
+      }
+    }
+    document.onkeydown = keyboardEvent;
+  </script>
+</body>
+</html>
