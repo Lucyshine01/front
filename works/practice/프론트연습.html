@@ -11,21 +11,69 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/368f95b037.js" crossorigin="anonymous"></script>
   <style>
-    #navbar {
-      height: 50px;
+    .mainheader {
+      height: 150px;
     }
-    #menu-bar {
-      width: 30px;
-      height: 30px;
+    #menubar {
+      position: relative;
+      height: 75px;
+    }
+    #menu-btn {
+      /* position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%) */
+      /* position:absolute; */
+      position:relative;
+      display: flex;
+      align-items:center;
+      /* top:8%; */
+      margin: 0px auto;
+      width: 1250px;
+      background-color: #eee;
+    }
+    .nav{height: 50px;}
+    #navbar {
+      position: relative;
+      
+      padding: 0px;
+    }
+    #nav-btn {
+      display: flex;
+      align-items:center;
+      /* justify-content: center; */
+      margin: 0 auto;
+      width: 1250px;
+    }
+    #menu-icon {
+      /* padding: 10px;
+      text-align: center; */
+      font-size: 16pt;
+      width: 50px;
+      height: 50px;
       color: #fff;
+      cursor: pointer;
+    }
+    #menu-icon:hover {
+      background-color: #ccc;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <div class="container-fluid" style="padding: 0px;">
-    <div id="navbar" class="navbar bg-dark">
-      <div id="menu-bar" class="text-center">
-        <i class="fa-solid fa-bars align-self-center"></i>
+    <div class="mainheader">
+      <div id="menubar">
+        <div id="menu-btn" class="d-flex justify-content-center">
+          1
+        </div>
+      </div>
+      <div id="navbar" class="nav navbar bg-dark">
+        <div id="nav-btn" class="nav">
+          <div id="menu-icon" class="d-flex justify-content-center">
+            <i class="fa-solid fa-bars align-self-center"></i>
+          </div>
+        </div>
       </div>
     </div>
   </div>
