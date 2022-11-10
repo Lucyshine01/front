@@ -17,16 +17,16 @@
       // $(".menu-icon").click(function(){
       //   $(".navbox").attr(,)
       // });
-      $('html').click(function(e) {   
-        if($(e.target).hasClass('menu-icon')) {
-          nav = "1";
-          // $(".navbox").addClass("noneclass");
-        }
-        else {
-          nav = "0";
-        }
-        if(nav = "1")
-      });
+      // $('html').click(function(e) {   
+      //   if($(e.target).hasClass('menu-icon')) {
+      //     nav = "1";
+      //     // $(".navbox").addClass("noneclass");
+      //   }
+      //   else {
+      //     nav = "0";
+      //   }
+      //   // if(nav = "1")
+      // });
       
 
     });
@@ -40,15 +40,9 @@
       height: 75px;
     }
     #menu-btn {
-      /* position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%) */
-      /* position:absolute; */
       position:relative;
       display: flex;
       align-items:center;
-      /* top:8%; */
       margin: 0px auto;
       width: 1250px;
       background-color: #eee;
@@ -82,10 +76,10 @@
       background-color: #ccc;
       color: #333;
     }
-    .navitem:hover .navbox{
+    .nav:hover > .navitem .navbox{
       display: block;
     }
-    .nav:hover > .navitem .navbox{
+    .nav:hover > li #menu-bg{
       display: block;
     }
     #menuIcon:hover ~ li .navbox{
@@ -97,6 +91,9 @@
     #menu-bg {
       position: absolute;
       display: none;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-bottom: 1px solid blue;
       width: 1250px;
       height: 200px;
       background-color: #333;
@@ -121,7 +118,7 @@
       line-height:50px;
       background-color: #333;
     }
-    .navbox li:hover {
+    .navitem .navbox li:hover {
       background-color: #ccc;
     }
     .menu-icon {
