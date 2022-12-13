@@ -25,6 +25,8 @@ window.onload = function() {
   let loadingBar = document.getElementById("loading_Bar");
   if(isNaN(loadingBar))fixSW = 1;
   else fixSW = 0;
+  
+  console.log("fixSw : " + fixSW);
   $(window).scroll(function(){
     let space = document.getElementById("headMain").clientHeight + "px";
     if(fixSW == 1){
@@ -37,8 +39,8 @@ window.onload = function() {
         $("#headMainSpace").css("height","0px");
       }
     }
-    else {
-      $("#headerMain").addClass("fixTop");
+    else if(fixSW == 0){
+      $("#headMain").addClass("fixTop");
       $("#headMainSpace").css("height",space);
     }
   });
@@ -47,10 +49,11 @@ window.onload = function() {
 $(document).ready(function(){
   $("#headerTop").hide();
   $("#loading_Bar").css("width","0px");
-  $("#loading_Bar").animate({width:"2000px"},700);
-  $("#loading_Bar").slideUp();
-  $("#headerTop").delay(700);
-  $("#headerTop").slideDown(700);
+  $("#loading_Bar").animate({width:"4000px"},500);
+  // $("#loading_Bar").slideUp();
+  $("#loading_Bar").fadeOut("slow");
+  $("#headerTop").delay(400);
+  $("#headerTop").slideDown(450);
   $("#mainView").css("background-color","#000225");
   $("html, body").animate({ scrollTop: 0 }, 5); 
   

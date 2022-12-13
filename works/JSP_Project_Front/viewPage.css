@@ -19,6 +19,7 @@ a:hover {
   margin: 0 auto;
 }
 #loading_Bar {
+  position: absolute;
   height: 5px;
   background-color: #fc3;
 }
@@ -158,10 +159,10 @@ nav {position: relative;}
   pointer-events: none;
   transition: 0.3s;
 }
-#help1 {left:17%}
-#help2 {left:31%}
-#help3 {left:44%}
-#help4 {left:53%}
+#help1 {left:130px}
+#help2 {left:250px}
+#help3 {left:360px}
+#help4 {left:450px}
 
 #mainView {
   padding-top: 60px;
