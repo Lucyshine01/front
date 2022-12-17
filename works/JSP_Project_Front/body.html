@@ -14,13 +14,64 @@
 
   <title>Document</title>
   <link rel="stylesheet" href="viewPage.css">
-  
+  <script>
+    'use strict';
+    function inputFile(me) {
+      $(me).next(".filebox").click();
+    }
+    function onChangefile(me) {
+      let val = $(me).val();
+      val = val.substring(val.lastIndexOf('\\')+1);
+      let exp = val.substring(val.lastIndexOf('.')+1).toUpperCase();
+      if(exp != 'PNG' && exp != "JPG") {
+        alert("PNG,JPG파일만 허용합니다!");
+        return;
+      }
+      $(me).prev(".fIcon").css("visibility","hidden");
+      $("#fileBoxs").append('<div class="fileName">'+val+'</div>');
+      let next = '<i class="fIcon fa-solid fa-plus" onclick="inputFile(this)"></i></div><input type="file" name="files" id="files" class="filebox" onchange="onChangefile(this)">'
+      $("#fileBoxs").append(next);
+    }
+  </script>
+  <style>
+    .fileName{
+      width: 100px;
+      height: 100px;
+      font-size: 0.9em;
+      font-weight: 300;
+    }
+    .fIcon {
+      color: #ccc;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0px 0px 2px 2px #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 2.5em;
+    }
+    .filebox {
+      width: 0;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      outline: none;
+      border: none;
+    } 
+  </style>
 </head>
 <body>
   <div id="loading_Bar"></div>
   <div id="hTPage"></div>
   <div id="hPage"></div>
-
+  <div class="text-center" style="height: 500px; width: 1500px;">
+    <div id="fileBoxs">
+      <i class="fIcon fa-solid fa-plus" onclick="inputFile(this)"></i>
+      <input class="filebox" type="file" name="files" id="files" onchange="onChangefile(this)">
+    </div>
+  </div>
   <div id="mainView">
     <div class="width d-flex">
       <div id="mainView_1">
